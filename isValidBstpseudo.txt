@@ -1,0 +1,16 @@
+Algorithm IsValidBST
+Input: root of a binary tree
+Output: True if the tree is a valid BST, False otherwise
+
+Function IsValidBST(root)
+    Return IsBSTHelper(root, -∞, +∞)
+
+Function IsBSTHelper(node, minVal, maxVal)
+    If node is null
+        Return True
+
+    If node.val ≤ minVal or node.val ≥ maxVal
+        Return False
+
+    Return IsBSTHelper(node.left, minVal, node.val) and IsBSTHelper(node.right, node.val, maxVal)
+
